@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>GIFT FOR DILYA♡</title>
+
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			min-height: 100vh;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+			background:
+				radial-gradient(circle at 20% 20%, rgba(255, 190, 210, .45), transparent 30%),
+				radial-gradient(circle at 80% 80%, rgba(200, 210, 255, .5), transparent 30%),
+				linear-gradient(135deg, #fff7fa, #f5f4ff);
+
+			color: #27232b;
+			overflow-x: hidden;
+		}
+
+		/* ---------- BACKGROUND HEARTS ---------- */
+
+		.heart {
+			position: fixed;
+			bottom: -50px;
+			font-size: 20px;
+			opacity: .25;
+			animation: floatUp linear forwards;
+			pointer-events: none;
+			z-index: 0;
+		}
+
+		@keyframes floatUp {
+			from {
+				transform: translateY(0) rotate(0deg);
+				opacity: 0;
+			}
+
+			15% {
+				opacity: .3;
+			}
+
+			to {
+				transform: translateY(-110vh) rotate(25deg);
+				opacity: 0;
+			}
+		}
+
+		/* ---------- MAIN ---------- */
+
+		main {
+			position: relative;
+			z-index: 2;
+			width: 100%;
+			max-width: 900px;
+			margin: auto;
+			padding: 30px 20px 80px;
+		}
+
+		section {
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+
+		/* ---------- FIRST SCREEN ---------- */
+
+		.small {
+			font-size: 14px;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+			color: #9c8490;
+			margin-bottom: 20px;
+		}
+
+		h1 {
+			font-size: clamp(45px, 10vw, 82px);
+			line-height: 1;
+			letter-spacing: -3px;
+			margin-bottom: 25px;
+
+			background: linear-gradient(90deg, #e88da8, #9c8be8);
+			-webkit-background-clip: text;
+			color: transparent;
+		}
+
+		.intro {
+			max-width: 600px;
+			font-size: 19px;
+			line-height: 1.7;
+			color: #665d68;
+			margin-bottom: 40px;
+		}
+
+		.button {
+			border: none;
+			background: #27232b;
+			color: white;
+			padding: 16px 28px;
+			border-radius: 999px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: .25s;
+			box-shadow: 0 12px 30px rgba(40, 30, 50, .18);
+		}
+
+		.button:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 17px 35px rgba(40, 30, 50, .25);
+		}
+
+		.button:active {
+			transform: scale(.96);
+		}
+
+		/* ---------- CARDS ---------- */
+
+		.section-title {
+			font-size: 40px;
+			margin-bottom: 12px;
+		}
+
+		.section-subtitle {
+			color: #77707b;
+			margin-bottom: 40px;
+		}
+
+		.cards {
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 18px;
+		}
+
+		.card {
+			position: relative;
+			background: rgba(255, 255, 255, .68);
+			backdrop-filter: blur(15px);
+			border: 1px solid rgba(255, 255, 255, .9);
+			border-radius: 25px;
+			padding: 30px 25px;
+			min-height: 180px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			transition: .35s;
+			box-shadow: 0 15px 45px rgba(80, 60, 90, .08);
+		}
+
+		.card:hover {
+			transform: translateY(-7px) rotate(.3deg);
+			box-shadow: 0 20px 55px rgba(80, 60, 90, .14);
+		}
+
+		.card-icon {
+			font-size: 35px;
+			margin-bottom: 15px;
+		}
+
+		.card h3 {
+			font-size: 21px;
+			margin-bottom: 10px;
+		}
+
+		.card p {
+			color: #716a74;
+			line-height: 1.6;
+			font-size: 15px;
+		}
+
+		/* ---------- WISH SECTION ---------- */
+
+		.wish-box {
+			width: 100%;
+			max-width: 650px;
+			min-height: 270px;
+			background: rgba(255, 255, 255, .7);
+			backdrop-filter: blur(20px);
+			border-radius: 35px;
+			padding: 45px 30px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			box-shadow: 0 20px 60px rgba(80, 60, 90, .1);
+			border: 1px solid rgba(255, 255, 255, .9);
+		}
+
+		#wish {
+			font-size: 24px;
+			line-height: 1.6;
+			margin: 25px 0;
+			min-height: 75px;
+		}
+
+		.wish-number {
+			font-size: 13px;
+			color: #9b929c;
+		}
+
+		/* ---------- FINAL ---------- */
+
+		.final-card {
+			max-width: 700px;
+			background: rgba(255, 255, 255, .72);
+			backdrop-filter: blur(20px);
+			border-radius: 35px;
+			padding: 50px 35px;
+			box-shadow: 0 25px 70px rgba(70, 50, 90, .12);
+		}
+
+		.final-card h2 {
+			font-size: clamp(35px, 7vw, 55px);
+			margin-bottom: 25px;
+		}
+
+		.final-card p {
+			font-size: 18px;
+			line-height: 1.8;
+			color: #68606b;
+		}
+
+		.final-heart {
+			font-size: 55px;
+			margin-bottom: 20px;
+			animation: heartbeat 1.8s infinite;
+		}
+
+		@keyframes heartbeat {
+
+			0%,
+			100% {
+				transform: scale(1);
+			}
+
+			50% {
+				transform: scale(1.15);
+			}
+		}
+
+		/* ---------- MOBILE ---------- */
+
+		@media (max-width: 650px) {
+
+			main {
+				padding: 20px 15px 60px;
+			}
+
+			.cards {
+				grid-template-columns: 1fr;
+			}
+
+			.card {
+				min-height: 160px;
+			}
+
+			.intro {
+				font-size: 17px;
+			}
+
+			.section-title {
+				font-size: 32px;
+			}
+
+			#wish {
+				font-size: 20px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<main>
+
+		<!-- FIRST SCREEN -->
+
+		<section>
+
+			<div class="small">
+				маленький подарок
+			</div>
+
+			<h1>Для тебя ♡</h1>
+
+			<p class="intro">
+				Иногда человеку хочется просто пожелать
+				немного хорошего. Поэтому здесь собралось
+				несколько маленьких пожеланий для тебя.
+			</p>
+
+			<button class="button" onclick="scrollToSection('reasons')">
+				Открыть ✨
+			</button>
+
+		</section>
+
+
+		<!-- CARDS -->
+
+		<section id="reasons">
+
+			<h2 class="section-title">
+				Несколько вещей
+			</h2>
+
+			<p class="section-subtitle">
+				которые хочется тебе пожелать
+			</p>
+
+			<div class="cards">
+
+				<div class="card">
+					<div class="card-icon">🌷</div>
+
+					<h3>Больше спокойствия</h3>
+
+					<p>
+						Пусть даже самые загруженные дни
+						иногда заканчиваются тихим вечером,
+						когда можно просто выдохнуть.
+					</p>
+				</div>
+
+
+				<div class="card">
+					<div class="card-icon">✨</div>
+
+					<h3>Больше счастливых моментов</h3>
+
+					<p>
+						Таких маленьких моментов, которые
+						неожиданно делают обычный день
+						намного лучше.
+					</p>
+				</div>
+
+
+				<div class="card">
+					<div class="card-icon">🌙</div>
+
+					<h3>Хороших вечеров</h3>
+
+					<p>
+						Чтобы всегда находилось время
+						для отдыха, любимой музыки,
+						фильмов и приятных разговоров.
+					</p>
+				</div>
+
+
+				<div class="card">
+					<div class="card-icon">🦋</div>
+
+					<h3>Смелости</h3>
+
+					<p>
+						Не бояться пробовать новое,
+						ошибаться, начинать сначала
+						и идти туда, куда действительно хочется.
+					</p>
+				</div>
+
+			</div>
+
+			<button class="button" style="margin-top:40px" onclick="scrollToSection('wishSection')">
+				Ещё кое-что →
+			</button>
+
+		</section>
+
+
+		<!-- RANDOM WISHES -->
+
+		<section id="wishSection">
+
+			<div class="wish-box">
+
+				<div class="small">
+					случайное пожелание
+				</div>
+
+				<div id="wish">
+					Нажми на кнопку ✨
+				</div>
+
+				<div class="wish-number" id="wishNumber">
+					0 / 10
+				</div>
+
+				<button class="button" onclick="newWish()">
+					Получить пожелание
+				</button>
+
+			</div>
+
+			<button class="button" style="margin-top:35px" onclick="scrollToSection('final')">
+				Последняя страница ♡
+			</button>
+
+		</section>
+
+
+		<!-- FINAL -->
+
+		<section id="final">
+
+			<div class="final-card">
+
+				<div class="final-heart">
+					♡
+				</div>
+
+				<h2>
+					Пусть всё получится
+				</h2>
+
+				<p>
+					Пусть впереди будет много хороших людей,
+					красивых воспоминаний, неожиданных
+					возможностей и дней, которые захочется
+					запомнить.
+					<br><br>
+					И даже если какой-то день окажется не самым
+					лучшим,пусть следующий обязательно
+					окажется немного светлее!
+				</p>
+
+				<br>
+
+				<button class="button" onclick="createHearts()">
+					✨ Ещё немного счастья
+				</button>
+
+			</div>
+
+		</section>
+
+	</main>
+
+
+	<script>
+
+		/* ---------- SMOOTH SCROLL ---------- */
+
+		function scrollToSection(id) {
+			document.getElementById(id).scrollIntoView({
+				behavior: "smooth"
+			});
+		}
+
+
+		/* ---------- WISHES ---------- */
+
+		const wishes = [
+			"Пусть сегодня произойдёт что-нибудь приятное, чего ты совсем не ожидала ✨",
+
+			"Желаю тебе больше поводов улыбаться даже без особой причины.",
+
+			"Пусть рядом всегда будут люди, с которыми можно быть собой.",
+
+			"Пусть впереди будет намного больше хороших дней, чем плохих.",
+
+			"Желаю тебе спокойствия в голове и тепла на душе.",
+
+			"Пусть каждый новый день приносит хотя бы одну хорошую новость.",
+
+			"Не забывай иногда останавливаться и замечать, как много хорошего уже есть вокруг.",
+
+			"Желаю тебе сил на важное и времени на то, что делает тебя счастливее.",
+
+			"Просто пусть у тебя всё будет хорошо. Правда.",
+
+			"Ну и, конечно же, будь самой яркой в самом контрастном Будапеште!"
+		];
+
+		let currentWish = 0;
+
+		function newWish() {
+
+			const wish = document.getElementById("wish");
+			const number = document.getElementById("wishNumber");
+
+			wish.style.opacity = "0";
+
+			setTimeout(() => {
+
+				wish.innerText = wishes[currentWish];
+
+				number.innerText =
+					`${currentWish + 1} / ${wishes.length}`;
+
+				wish.style.opacity = "1";
+
+				currentWish++;
+
+				if (currentWish >= wishes.length) {
+					currentWish = 0;
+				}
+
+			}, 250);
+		}
+
+
+		/* ---------- FLOATING HEARTS ---------- */
+
+		function createHeart() {
+
+			const heart = document.createElement("div");
+
+			heart.className = "heart";
+
+			const symbols = ["♡", "♥", "✦", "✧"];
+
+			heart.innerText =
+				symbols[Math.floor(Math.random() * symbols.length)];
+
+			heart.style.left =
+				Math.random() * 100 + "vw";
+
+			heart.style.fontSize =
+				(15 + Math.random() * 25) + "px";
+
+			heart.style.animationDuration =
+				(5 + Math.random() * 7) + "s";
+
+			document.body.appendChild(heart);
+
+			setTimeout(() => {
+				heart.remove();
+			}, 12000);
+		}
+
+
+		function createHearts() {
+
+			for (let i = 0; i < 25; i++) {
+
+				setTimeout(() => {
+					createHeart();
+				}, i * 80);
+
+			}
+		}
+
+
+		/* ---------- CONSTANT BACKGROUND ANIMATION ---------- */
+
+		setInterval(() => {
+
+			if (Math.random() > .35) {
+				createHeart();
+			}
+
+		}, 900);
+
+	</script>
+
+</body>
+
+</html>
